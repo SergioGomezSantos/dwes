@@ -7,7 +7,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulario Nombre</title>
+    <title>Formulario Nombre Valor</title>
 </head>
 
 <body>
@@ -15,15 +15,16 @@ session_start();
         <p>
             <label for="name">Nombre: </label>
 
-            <?php  
-                if (!empty($_SESSION['prevName'])) {
-                    echo '<input type="text" name="name" id="name" value="' . $_SESSION['prevName'] . '"/>';
-                } else {
-                    echo '<input type="text" name="name" id="name"/>';
-                }
+            <?php
+            if (!empty($_SESSION['prevName'])) {
+                echo '<input type="text" name="name" id="name" value="' . $_SESSION['prevName'] . '"/>';
+                unset($_SESSION['prevName']);
+            } else {
+                echo '<input type="text" name="name" id="name"/>';
+            }
             ?>
 
-            
+
 
             <?php
             if (!empty($_SESSION['emptyName'])) {

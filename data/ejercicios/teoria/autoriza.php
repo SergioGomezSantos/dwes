@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         echo "<br>";
 
+        echo "Hidden IP: " . (!empty($_GET['ip']) ? $_GET['ip'] : "-");
+
     } else {
 
         echo "No proviene del formulario";
@@ -64,6 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo $colors . " ";
         }
         echo "<br>";
+
+        echo "Hidden IP: " . (!empty($_POST['ip']) ? $_POST['ip'] : "-");
     }
 }
 

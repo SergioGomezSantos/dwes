@@ -48,6 +48,8 @@
         <option value="Azul">Azul</option>
       </select>
     </p>
+    
+    <input type="hidden" name="ip" id="ip" value="<?= $_SERVER['SERVER_ADDR'] ?>">
 
     <button type="submit" name="send" id="send" value="send">Enviar</button>
   </form>
@@ -95,6 +97,8 @@
         <option value="Azul">Azul</option>
       </select>
     </p>
+
+    <input type="hidden" name="ip" id="ip" value="<?= $_SERVER['SERVER_ADDR'] ?>">
 
     <button type="submit" name="send" id="send" value="send">Enviar</button>
   </form>

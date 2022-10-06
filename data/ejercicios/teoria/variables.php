@@ -15,4 +15,4 @@ $var1 = 1;
 echo 'Variable tipo ' . gettype($var1) . ' convertida en string: ' . (string)$var1;
 echo "<br>";
 
-footer();
+footerVolver('info.php#Variables', 'Información');

@@ -56,4 +56,4 @@ echo '2 <=> 1' . '<br>';
 echo 2 <=> 1;
 echo '<br>';
 
-footer();
+footerVolver('info.php#Operadores', 'Información');

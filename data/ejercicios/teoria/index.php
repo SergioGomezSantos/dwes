@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Teoria</h1>
-        <hr>
+        <hr><br>
     </header>
 
     <section>
@@ -23,9 +23,13 @@
                 <li><a href="global.php">Variable Global</a></li>
                 <li><a href="formulario.php">Formulario</a></li>
                 <li><a href="funciones.php">Funciones</a></li>
-                <li><a href="../index.php">Ejercicios</a></li>
+                <li><a href="webAsignaturas.php">Ejemplo Objeto</a></li>
             </ul>
         </div>
+
+        <br><hr>
+        <div><a href="../index.php">Ejercicios</a></div>
+
     </section>
 </body>
 

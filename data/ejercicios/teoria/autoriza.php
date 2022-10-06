@@ -72,4 +72,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 echo "<br>";
-volverFooter("formulario.php", "Formulario");
+footerVolver("formulario.php", "Formulario");

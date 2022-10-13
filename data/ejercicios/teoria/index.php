@@ -24,6 +24,7 @@
                 <li><a href="formulario.php">Formulario</a></li>
                 <li><a href="funciones.php">Funciones</a></li>
                 <li><a href="webAsignaturas.php">Ejemplo Objeto</a></li>
+                <li><a href="excepciones.php">Excepciones</a></li>
             </ul>
         </div>
 

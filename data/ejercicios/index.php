@@ -227,6 +227,8 @@
         Ejercicio igual al 20 pero con sesiones
       </li>
     </ul>
+    <br>
+    <a href="/solucionesT2/23.php/" target="_blank">Ejercicio 23</a>
   </ol>
 
   <?php

@@ -56,14 +56,29 @@
                         delete();
                         break;
 
+                    case "newWish":
+                        if (isset($_POST['addWish']) && !empty($_POST['addWish'])) {
+                            addWish($_POST['addWish']);
+                        } else {
+                            echo "Error. No hay deseo";
+                        }
+                        break;
+
+                    case "delWish":
+                        if (isset($_POST['removeWish']) && !empty($_POST['removeWish'])) {
+                            removeWish($_POST['removeWish']);
+                        } else {
+                            echo "Error. No hay deseo";
+                        }
+                        break;
+
                     default:
+                        echo "Error. No viene de formulario";
                         break;
                 }
-            } elseif (isset($_POST['newWish']) && !empty($_POST['newWish'])) {
-                addWish($_POST['newWish']);
             } else {
 
-                echo "No viene de formulario";
+                echo "Error. No viene de formulario";
             }
         }
 
@@ -87,9 +102,9 @@
         {
             echo '
             <form name="newForm" method="POST" action="">
-                <label for="newWish">Nuevo Deseo: </label>
-                <input type="text" name="newWish" id="newWish" />
-                <button type="submit" name="send" id="send" value="send">Enviar</button>
+                <label for="addWish">Nuevo Deseo: </label>
+                <input type="text" name="addWish" id="addWish" />
+                <button type="submit" id="newWish" name="option" value="newWish">Enviar</button>
             </form>
             ';
         }
@@ -108,6 +123,39 @@
             homeButton();
         }
 
+        function delete()
+        {
+            $fp = fopen(WISH_LIST, "r");
+
+            if ($fp) {
+
+                while (!feof($fp)) {
+                    $line = fgets($fp);
+                    $list[] = $line;
+                }
+
+                fclose($fp);
+                unset($list[0]);
+
+                echo "Selecciona el deseo a Borrar: " . "<br>";
+
+                echo '
+                <form name="deleteForm" method="POST" action="">
+                    <select id="removeWish" name="removeWish">
+                ';
+                foreach ($list as $key => $value) {
+                    echo '<option value="' . $key . '">' . trim($value, '-') . '</option>';
+                }
+                echo '
+                    </select>
+                    <button type="submit" id="delWish" name="option" value="delWish">Borrar</button>
+                </form>
+                ';
+            } else {
+                echo "Error al leer el archivo";
+            }
+        }
+
         function addWish($newWish)
         {
             $fp = fopen(WISH_LIST, "a");
@@ -122,35 +170,27 @@
             homeButton();
         }
 
-        function delete()
+        function removeWish($delWish)
         {
-            $fp = fopen(WISH_LIST, "r");
+
+            $fp = fopen(WISH_LIST, "a+");
 
             if ($fp) {
 
                 while (!feof($fp)) {
                     $line = fgets($fp);
-                    $lista[] = $line;
+                    $list[] = $line;
+                }
+
+                unset($list[$delWish]);
+                ftruncate($fp, 0);
+
+                foreach ($list as $newLine) {
+                    fwrite($fp, $newLine);
                 }
 
                 fclose($fp);
-                unset($lista[0]);
-
-                echo "Selecciona el deseo a Borrar: " . "<br>";
-
-                echo '
-                <form name="deleteForm" method="POST" action="">
-                    <select id="delWish" name="delWish">
-                ';
-                foreach ($lista as $key => $value) {
-                    echo '<option value="' . $key . '">' . $value . '</option>';
-                }  
-                echo '
-                    </select>
-                    <button type="submit" name="send" id="send" value="send">Enviar</button>
-                </form>
-                ';
-
+                homeButton();
             } else {
                 echo "Error al leer el archivo";
             }

@@ -26,6 +26,7 @@
                 <li><a href="webAsignaturas.php">Ejemplo Objeto</a></li>
                 <li><a href="excepciones.php">Excepciones</a></li>
                 <li><a href="ficheros.php">Ficheros</a></li>
+                <li><a href="subidaFicheros.php">Subida de Ficheros</a></li>
             </ul>
         </div>
 

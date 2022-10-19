@@ -233,7 +233,7 @@
 
   <?php
     require 'teoria/footer.php'; 
-    footerDesdeEjercicios();
+    footer("teoria/index.php");
   ?>
 
 </body>

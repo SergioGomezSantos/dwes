@@ -10,10 +10,19 @@ div {
     text-align: center;
 }
 
-div ul {
+div ul#columns4 {
     columns: 4;
     -webkit-columns: 4;
     -moz-columns: 4;
+    column-rule-style: solid;
+    column-rule-width: 2px;
+    column-rule-color: black;
+}
+
+div ul#columns2 {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
     column-rule-style: solid;
     column-rule-width: 2px;
     column-rule-color: black;

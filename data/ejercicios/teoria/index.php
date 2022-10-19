@@ -15,7 +15,7 @@
 
     <section>
         <div>
-            <ul>
+            <ul id="columns4">
                 <li><a href="info.php">Información</a></li>
                 <li><a href="variables.php">Variables</a></li>
                 <li><a href="arrays.php">Arrays</a></li>

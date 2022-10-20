@@ -1,10 +1,39 @@
-<!-- Seleccionar entre español, ingles y aleman.
-Seleccionar una marca de coche preferida.
+<?php
 
-Mostrar saludo en el idioma elegido junto a la marca.
+// Seleccionar entre español, ingles y aleman.
+// Seleccionar una marca de coche preferida.
 
-Guardar la información en cookies.
-El idioma por defecto será español. -->
+// Mostrar saludo en el idioma elegido junto a la marca.
+
+// Guardar la información en cookies.
+// El idioma por defecto será español.
+
+$languaje = "spanish";
+$brand;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (isset($_POST['send']) && !empty($_POST['send'])) {
+
+        if (isset($_POST['languaje']) && !empty($_POST['languaje'])) {
+            $languaje = $_POST['languaje'];
+        }
+
+        if (isset($_POST['brand']) && !empty($_POST['brand'])) {
+            $brand = $_POST['brand'];
+        }
+
+        $json = ["languaje" => $languaje, "brand" => $brand];
+        setcookie('cookieEjemplo', json_encode($json), time() + 60);
+
+    } else {
+
+        echo "Error. No viene de formulario";
+    }
+
+    header("Location: cookiesEjemploShow.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +44,7 @@ El idioma por defecto será español. -->
 </head>
 
 <body>
-    <form name="formulario" method="POST" action="cookiesEjemploShow.php">
+    <form name="formulario" method="POST" action="">
         <p>Idioma:
             <select id="languaje" name="languaje">
                 <option value="spanish">Español</option>
@@ -36,9 +65,9 @@ El idioma por defecto será español. -->
         <button type="submit" name="send" id="send" value="send">Enviar</button>
     </form>
 
-    <?php 
-        include 'footer.php';
-        footerVolver("cookies.php", "Cookies");
+    <?php
+    include 'footer.php';
+    footerVolver("cookies.php", "Cookies");
     ?>
 </body>
 

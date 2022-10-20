@@ -28,6 +28,7 @@
                 <li><a href="ficheros.php">Ficheros</a></li>
                 <li><a href="subidaFicheros.php">Subida de Ficheros</a></li>
                 <li><a href="cookies.php">Cookies</a></li>
+                <li><a href="xml.php">XML</a></li>
             </ul>
         </div>
 

@@ -1,0 +1,19 @@
+li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+}
+
+header {
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+div {
+    text-align: center;
+}

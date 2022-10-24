@@ -191,7 +191,7 @@
     </li>
       <ul>
         <li>
-          <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
+          <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>/17.php" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
           Ejercicio sobre POO y series numéricas (fibonacci, factorial, primos y potencias de 2). Enunciado en apuntes
         </li>
       </ul>

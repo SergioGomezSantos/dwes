@@ -15,6 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['send']) && !empty($_POST['send'])) {
 
+        if (isset($_COOKIE['cookieEjemplo'])) {
+
+            setcookie('cookieEjemplo', '', time() - 60);
+        }
+
         if (isset($_POST['languaje']) && !empty($_POST['languaje'])) {
             $languaje = $_POST['languaje'];
         }
@@ -26,12 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $json = ["languaje" => $languaje, "brand" => $brand];
         setcookie('cookieEjemplo', json_encode($json), time() + 60);
 
+        header("Location: cookiesEjemploShow.php");
+        exit();
+
     } else {
 
         echo "Error. No viene de formulario";
     }
-
-    header("Location: cookiesEjemploShow.php");
 }
 ?>
 

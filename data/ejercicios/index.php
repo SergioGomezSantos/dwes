@@ -201,7 +201,7 @@
     </li>
     <ul>
       <li>
-        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
+        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>/18.php" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
         Cookies 1 (ver apuntes)
       </li>
       <li>

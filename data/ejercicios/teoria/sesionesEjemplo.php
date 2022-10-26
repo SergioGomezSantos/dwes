@@ -1,12 +1,13 @@
 <?php
 
 session_start();
+include 'footer.php';
 
 const USER1 = 'usuario';
 CONST USER2 = 'admin';
 
-const PASSWD1 = 1234;
-CONST PASSWD2 = 4567;
+const PASSWD1 = '1234';
+CONST PASSWD2 = '4567';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -14,25 +15,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($_POST['user']) && !empty($_POST['user']) && isset($_POST['passwd']) && !empty($_POST['passwd'])) {
 
-            if ($_POST['user'] === USER1 && $_POST['passwd'] === PASSWD1) {
-
-                $_SESSION['rol'] = 0;
-                header('Location: sesionesEjemplo2.php');
-
-            } elseif ($_POST['user'] === USER2 && $_POST['passwd'] === PASSWD2) {
-
-                $_SESSION['rol'] = 1;
-                header('Location: sesionesEjemplo2.php');
-
-            } else {
-                echo "Credenciales Incorrectos";
-            }
+            checkCredentials();
 
         } else {
 
             echo "Faltan Credenciales";
         }
     }
+}   
+
+function checkCredentials() {
+
+    if ($_POST['user'] === USER1 && $_POST['passwd'] === PASSWD1) {
+
+        $_SESSION['rol'] = 0;
+        header('Location: sesionesEjemploWelcome.php');
+        exit();
+
+    } elseif ($_POST['user'] === USER2 && $_POST['passwd'] === PASSWD2) {
+
+        $_SESSION['rol'] = 1;
+        header('Location: sesionesEjemploWelcome.php');
+        exit();
+
+    } else {
+        echo "Credenciales Incorrectos";
+    }
+
 }
 
 ?>
@@ -55,12 +64,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br>
 
         <label for="passwd">Contraseña: </label>
-        <input type="passwd" name="passwd" id="passwd" />
+        <input type="password" name="passwd" id="passwd" />
 
         <br>
 
         <button type="submit" name="send" id="send" value="send">Enviar</button>
     </form>
+
+    <?php 
+        footerVolver("sesiones.php", "Sesiones");
+    ?>
+
 </body>
 
 </html>

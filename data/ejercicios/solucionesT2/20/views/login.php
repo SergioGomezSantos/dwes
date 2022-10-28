@@ -1,8 +1,9 @@
 <?php
 
-if (isset($_COOKIE['userName'])) {
-    setCookie('userName', '', time() - 120, '/');
-    unset($_COOKIE['userName']);
+session_start();
+
+if (isset($_SESSION['userName'])) {
+    header('Location: 20.php?option=close');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,15 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br>
 
     <div>
-        <form name="form" action="" method="POST">
+    <form name="form" action="" method="POST">
 
-            <label for="userName">Usuario: </label>
-            <input type="text" name="userName" id="userName" />
+        <label for="userName">Usuario: </label>
+        <input type="text" name="userName" id="userName" />
 
-            <button type="submit" name="send" id="send" value="send">Enviar</button>
-        </form>
+        <button type="submit" name="send" id="send" value="send">Enviar</button>
+    </form>
 
-        <?= $error ?>
+    <?= $error ?>
 
     </div>
 

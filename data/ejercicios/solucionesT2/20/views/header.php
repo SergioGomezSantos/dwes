@@ -1,10 +1,15 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/app.css">
-  <title>App 18</title>
+  <title>App 20</title>
 </head>
 
 <body>
@@ -16,9 +21,9 @@
 
       echo $this->getName();
 
-      if (isset($_COOKIE['userName'])) {
+      if (isset($_SESSION['userName'])) {
 
-        echo " | " . $_COOKIE['userName'];
+        echo " | " . $_SESSION['userName'];
       }
       ?>
     </h1>
@@ -30,33 +35,33 @@
 
         <?php
 
-        if (isset($_COOKIE['userName'])) {
+        if (isset($_SESSION['userName'])) {
           
           if ($_GET['option'] !== 'menu') {
-            echo '<li><a href="18.php?option=menu">Lista</a></li>';
+            echo '<li><a href="20.php?option=menu">Lista</a></li>';
           } else {
             echo '<li>Lista</li>';
           }
   
           if ($_GET['option'] !== 'new') {
-            echo '<li><a href="18.php?option=new">Añadir</a></li>';
+            echo '<li><a href="20.php?option=new">Añadir</a></li>';
           } else {
             echo '<li>Añadir</li>';
           }
   
           if ($_GET['option'] !== 'delete') {
-            echo '<li><a href="18.php?option=delete">Eliminar</a></li>';
+            echo '<li><a href="20.php?option=delete">Eliminar</a></li>';
           } else {
             echo '<li>Eliminar</li>';
           }
   
           if ($_GET['option'] !== 'reset') {
-            echo '<li><a href="18.php?option=reset">Vaciar</a></li>';
+            echo '<li><a href="20.php?option=reset">Vaciar</a></li>';
           } else {
             echo '<li>Vaciar</li>';
           }
   
-          echo '<li><a href="18.php?option=close">Salir</a></li>';
+          echo '<li><a href="20.php?option=close">Salir</a></li>';
         }
 
         ?>

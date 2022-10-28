@@ -205,7 +205,7 @@
         Cookies 1 (ver apuntes)
       </li>
       <li>
-        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
+        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>/19.php" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
         Cookies 2 (ver apuntes)
       </li>
     </ul>
@@ -219,16 +219,16 @@
     </li>
     <ul>
       <li>
-        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
+        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>/20.php" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
         Ejercicio igual al 19 pero con sesiones
       </li>
       <li>
-        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
+        <a href="/solucionesT2/<?php printf("%02d", ++$ejercicio);  ?>/21.php" target="_blank">Ejercicio <?php printf("%02d", $ejercicio);  ?></a>
         Ejercicio igual al 20 pero con sesiones
       </li>
     </ul>
     <br>
-    <a href="/solucionesT2/23.php/" target="_blank">Ejercicio 23</a>
+    <a href="/solucionesT2/23/23.php" target="_blank">Ejercicio 23</a>
   </ol>
 
   <?php

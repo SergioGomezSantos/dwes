@@ -1,7 +1,9 @@
 <?php
 
-if (!isset($_COOKIE['userName'])) {
-    header('Location: 18.php');
+session_start();
+
+if (!isset($_SESSION['userName'])) {
+    header('Location: 20.php');
 }
 
 ?>

@@ -11,7 +11,7 @@ class App
 
     public function __construct()
     {
-        $this->name = "App del Ejercicio 18";
+        $this->name = "App del Ejercicio 20";
     }
 
     public function login()
@@ -21,8 +21,8 @@ class App
 
     public function auth($userName)
     {
-        setcookie('userName', $userName, time() + 120);
-        header('Location: 18.php?option=menu');
+        $_SESSION['userName'] = $userName;
+        header('Location: 20.php?option=menu');
         exit();
     }
 
@@ -33,7 +33,7 @@ class App
 
     public function homeList()
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
+        $route = sprintf($this::ROUTE, $_SESSION['userName']);
 
         if (!is_file($route)) {
 
@@ -63,7 +63,7 @@ class App
 
     public function addWish($newWish)
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
+        $route = sprintf($this::ROUTE, $_SESSION['userName']);
         $fp = fopen($route, "a");
 
         if (!$fp) {
@@ -82,7 +82,7 @@ class App
 
     public function deleteList()
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
+        $route = sprintf($this::ROUTE, $_SESSION['userName']);
         $fp = fopen($route, "r");
 
         if ($fp) {
@@ -105,7 +105,7 @@ class App
 
     public function removeWish($delWish)
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
+        $route = sprintf($this::ROUTE, $_SESSION['userName']);
         $fp = fopen($route, "a+");
 
         if ($fp) {
@@ -135,7 +135,7 @@ class App
 
     public function resetList()
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
+        $route = sprintf($this::ROUTE, $_SESSION['userName']);
         $fp = fopen($route, "a");
 
         if (!$fp) {
@@ -145,6 +145,15 @@ class App
         ftruncate($fp, $this::RESET_LIST);
 
         fclose($fp);
+    }
+
+    public function close()
+    {
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+        setCookie(session_name(), '', time() - 60, '/');
+        header('Location: 20.php');
     }
 
     /**

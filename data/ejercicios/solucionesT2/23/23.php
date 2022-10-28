@@ -1,16 +1,10 @@
 <?php
 
-require_once "18_App.php";
+require_once "23_App.php";
 $app = new App;
 
-
 switch ($_GET['option']) {
-
-    case "menu":
-
-        $app->home();
-        break;
-
+    
     case "new":
 
         $app->new();
@@ -28,6 +22,6 @@ switch ($_GET['option']) {
 
     default:
 
-        $app->login();
+        $app->home();
         break;
 }

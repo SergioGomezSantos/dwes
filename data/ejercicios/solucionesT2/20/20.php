@@ -1,6 +1,6 @@
 <?php
 
-require_once "18_App.php";
+require_once "20_App.php";
 $app = new App;
 
 
@@ -24,6 +24,11 @@ switch ($_GET['option']) {
     case "reset":
 
         $app->reset();
+        break;
+
+    case "close":
+        
+        $app->close();
         break;
 
     default:

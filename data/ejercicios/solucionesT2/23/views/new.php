@@ -1,9 +1,5 @@
 <?php
 
-if (!isset($_COOKIE['userName'])) {
-    header('Location: 18.php');
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['send']) && !empty($_POST['send'])) {
@@ -11,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['newWish']) && !empty($_POST['newWish'])) {
 
             $this->addWish($_POST['newWish']);
-            header('Location: 18.php?option=menu');
+            header('Location: 23.php');
 
         } else {
             $error = "Falta el Deseo";

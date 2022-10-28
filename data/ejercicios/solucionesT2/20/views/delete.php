@@ -1,7 +1,8 @@
 <?php
+session_start();
 
-if (!isset($_COOKIE['userName'])) {
-    header('Location: 18.php');
+if (!isset($_SESSION['userName'])) {
+    header('Location: 20.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -11,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['removeWish']) && !empty($_POST['removeWish'])) {
 
             $this->removeWish($_POST['removeWish']);
-            header('Location: 18.php?option=menu');
+            header('Location: 20.php?option=menu');
         } else {
             $error = "Falta el Deseo";
         }

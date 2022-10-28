@@ -1,7 +1,9 @@
 <?php
 
-if (!isset($_COOKIE['userName'])) {
-    header('Location: 18.php');
+session_start();
+
+if (!isset($_SESSION['userName'])) {
+    header('Location: 20.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['send']) && !empty($_POST['send'])) {
 
         $this->resetList();
-        header('Location: 18.php?option=menu');
+        header('Location: 20.php?option=menu');
     }
 }
 

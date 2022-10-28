@@ -3,7 +3,7 @@
 class App
 {
 
-    private const ROUTE = "lists/%s.txt";
+    private const ROUTE = "list/23.txt";
     private const DEFAULT_TEXT = "Lista de Deseos: ";
     private const RESET_LIST = 16;
 
@@ -11,19 +11,7 @@ class App
 
     public function __construct()
     {
-        $this->name = "App del Ejercicio 18";
-    }
-
-    public function login()
-    {
-        include('views/login.php');
-    }
-
-    public function auth($userName)
-    {
-        setcookie('userName', $userName, time() + 120);
-        header('Location: 18.php?option=menu');
-        exit();
+        $this->name = "App del Ejercicio 23";
     }
 
     public function home()
@@ -33,15 +21,14 @@ class App
 
     public function homeList()
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
 
-        if (!is_file($route)) {
+        if (!is_file($this::ROUTE)) {
 
-            $fp = fopen($route, "w");
+            $fp = fopen($this::ROUTE, "w");
             fwrite($fp, $this::DEFAULT_TEXT);
         }
 
-        $fp = fopen($route, "r");
+        $fp = fopen($this::ROUTE, "r");
 
         if ($fp) {
 
@@ -63,8 +50,7 @@ class App
 
     public function addWish($newWish)
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
-        $fp = fopen($route, "a");
+        $fp = fopen($this::ROUTE, "a");
 
         if (!$fp) {
             echo "Error al interactuar con el archivo";
@@ -82,8 +68,7 @@ class App
 
     public function deleteList()
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
-        $fp = fopen($route, "r");
+        $fp = fopen($this::ROUTE, "r");
 
         if ($fp) {
 
@@ -105,8 +90,7 @@ class App
 
     public function removeWish($delWish)
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
-        $fp = fopen($route, "a+");
+        $fp = fopen($this::ROUTE, "a+");
 
         if ($fp) {
 
@@ -135,8 +119,7 @@ class App
 
     public function resetList()
     {
-        $route = sprintf($this::ROUTE, $_COOKIE['userName']);
-        $fp = fopen($route, "a");
+        $fp = fopen($this::ROUTE, "a");
 
         if (!$fp) {
             echo "Error al interactuar con el archivo";

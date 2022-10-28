@@ -1,10 +1,3 @@
-<?php
-
-if (!isset($_COOKIE['userName'])) {
-    header('Location: 18.php');
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">

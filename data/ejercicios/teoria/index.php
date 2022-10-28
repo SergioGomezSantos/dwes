@@ -30,6 +30,7 @@
                 <li><a href="cookies.php">Cookies</a></li>
                 <li><a href="xml.php">XML</a></li>
                 <li><a href="sesiones.php">Sesiones</a></li>
+                <li><a href="deseos.php">Ejercicio Deseos</a></li>
             </ul>
         </div>
 

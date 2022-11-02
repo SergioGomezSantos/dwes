@@ -2,4 +2,4 @@ data/*
 !data/web1
 !data/web2
 !data/init-db
-!data/mvc
+!data/ejercicios

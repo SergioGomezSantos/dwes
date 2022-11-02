@@ -7,7 +7,10 @@
 </head>
 
 <body>
-    <table border="solid">
+
+    <!-- Creación de la tabla -->
+
+    <table border="solid" style="text-align: center;">
         <tr>
             <td>Nombre</td>
             <td>Apellidos</td>
@@ -17,11 +20,17 @@
         </tr>
         <?php
             echo "<tr>";
+
+            // Creación de Variables
+
             $name = "Sergio";
             $surnames = ["Gómez", "Santos"];
             $age = 22;
             $phoneNumber = 1234;
             $email = "gomez.sergio.smr@gmail.com";
+
+
+            // Echo Variables, uso de comillas dobles y concatenación
 
             echo "<td>$name</td>";
 
@@ -45,6 +54,9 @@
             }
             echo "</td>";
 
+            
+            // Print Variables, uso de comillas simples y concatenación
+            
             print("<td>" . $age . '</td>');
             print("<td>" . $phoneNumber . '</td>');
             print("<td>" . $email . '</td>');

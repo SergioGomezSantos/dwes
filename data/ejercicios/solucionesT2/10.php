@@ -1,5 +1,7 @@
 <?php
 
+// Delcaración de los arrays asociativos usando las 2 formas
+
 $team1 = [
     "base" => "Jugador A",
     "escolta" => "Jugador B",
@@ -16,12 +18,25 @@ $team2 = array(
 );
 
 
-echo "Equipo 1: " . "<br>";
+// Echo del texto informativo y llamada a la función
+
+echo "Equipo 1: ";
 printTeam($team1);
+
+
+
 echo "<br><hr><br>";
-echo "Equipo 2: " . "<br>";
+
+
+
+// Echo del texto informativo y llamada a la función
+
+echo "Equipo 2: ";
+
 printTeam($team2);
 
+
+// Función para recorrer el array que recibe y mostrar los diferentes $key => $value en forma de lista
 
 function printTeam($team)
 {

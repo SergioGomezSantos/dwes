@@ -26,7 +26,6 @@ services:
       - MYSQL_PASSWORD=secret
     networks:
       - backend
-      - frontend
   mvc:
     build: ./dockerfiles/mvc
     container_name: mvc

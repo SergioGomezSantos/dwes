@@ -34,7 +34,7 @@
 
             if (!empty($_POST['name'])) {
 
-                echo "<br><hr><br>" . "Datos Recibidos." . "<br><br>";
+                echo "<br><hr><br>" . "Datos Recibidos." . "<br>";
                 echo "Saludos, " . $_POST['name'] . "<br>";
 
             } else {

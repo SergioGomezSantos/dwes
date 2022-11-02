@@ -7,6 +7,9 @@
 </head>
 
 <body>
+
+    <!-- Creación del Formulario -->
+
     <form name="formulario" method="POST" action="">
         <p>
             <label for="number1">Numero 1: </label>
@@ -33,9 +36,16 @@
 
     <?php
 
+    // Si el Method el POST
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        // Si send existe y no esta vacío (Ha pulsado el boton con esos parámetro del formulario) entra en el bucle
+        // Si no existe o está vacío, avisa
+
         if (isset($_POST['send']) && !empty($_POST['send'])) {
+
+            // Si alguno de los parámetros number1/number2/operator del formulario por POST está vacío
 
             if (!empty($_POST['number1']) && !empty($_POST['number2']) && !empty($_POST['operator'])) {
 

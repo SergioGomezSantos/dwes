@@ -81,6 +81,8 @@
                         break;
                 }
 
+                // Echo para mostrar la operación realizada y el resultado
+
                 echo "<br><hr><br>" . "Datos Recibidos.". "<br><br>";
                 echo $number1 . " " . $operator . " " . $number2 . " = " . $result;
 

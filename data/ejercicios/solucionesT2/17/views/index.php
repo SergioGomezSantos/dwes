@@ -1,7 +1,11 @@
 <?php
+
+// Si ?option del GET no está en las $options de la App, redirige sin ?option
+
 if (isset($_GET['option']) && !in_array($_GET['option'], $this->getOptions())) {
     header("Location: 17.php");
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -13,14 +17,22 @@ if (isset($_GET['option']) && !in_array($_GET['option'], $this->getOptions())) {
 
 <body>
     <?php
+
+    // Incluyo la cabecera, donde está el nombre de la App y el Nav con los enlaces para cambiar ?option
     include 'header.php';
+
     ?>
 
     <br>
 
     <?php
 
+    // Echo <div></div> para aplicarle css
+
     echo "<div>";
+
+
+    // Switch al parámetro option del GET. Si coincide con algun case, lanza la función correspondiente de la App
 
     switch ($_GET['option']) {
 
@@ -45,6 +57,8 @@ if (isset($_GET['option']) && !in_array($_GET['option'], $this->getOptions())) {
             break;
 
         default:
+
+            // Cuando option no coincide (o no existe), echo para mostrar información básica
 
             echo
                 "<p>Index de la Aplicación.</p>

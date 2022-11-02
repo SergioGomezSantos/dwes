@@ -13,7 +13,15 @@
 
     <h1>
       <?php
+
+      // Echo para mostar el $name de la App
+
       echo $this->getName();
+
+
+      // Compruebo si el parámetro option del GET está en el array de opciones de la App
+      // Si está lo muestro junto al nombre de la App
+      // Si no hay option en el GET, no muestra nada
 
       if (in_array($_GET['option'], $this->getOptions())) {
         echo " | " . $_GET['option'];
@@ -28,6 +36,10 @@
       <ul>
 
         <?php
+
+        // Compruebo si el parámetro option del GET es distinto a cada valor del array opciones de la App para mostrar el texto como texto plano o como enlace
+        // Tambíen lo comparo a null para indicar que está en el index
+        // Los enlaces redirigen a la misma página pero con ?option=X
 
         if ($_GET['option'] !== null) {
           echo '<li><a href="17.php">Index</a></li>';

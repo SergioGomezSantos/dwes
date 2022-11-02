@@ -7,6 +7,9 @@
 </head>
 
 <body>
+
+    <!-- Creación del Formulario -->
+
     <form name="formulario" method="POST" action="">
         <p>
             <label for="name">Nombre: </label>
@@ -17,18 +20,28 @@
 
     <?php
 
+   // Si el Method el POST
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        // Si send existe y no esta vacío (Ha pulsado el boton con esos parámetro del formulario) entra en el bucle
+        // Si no existe o está vacío, avisa
 
         if (isset($_POST['send']) && !empty($_POST['send'])) {
 
+            // Si el parámetro name del formulario por POST no está vacío, muestra de la información
+            // Si esta vacío, muetra un aviso en rojo
+
             if (!empty($_POST['name'])) {
 
-                echo "<br><hr><br> Datos Recibidos.<br><br>";
+                echo "<br><hr><br>" . "Datos Recibidos." . "<br><br>";
                 echo "Saludos, " . $_POST['name'] . "<br>";
+
             } else {
 
                 echo "<p style=color:red>El campo es obligatorio</p>";
             }
+
         } else {
 
             echo "No viene de formulario";

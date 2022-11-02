@@ -11,11 +11,17 @@ session_start();
 </head>
 
 <body>
+
+    <!-- Creación del Formulario -->
+
     <form name="formulario" method="POST" action="">
         <p>
             <label for="name">Nombre: </label>
 
             <?php
+
+            // Si el parámetro name del formulario por POST tiene menos de 3 carácteres, muestra el input de name con los datos recibidos
+            // Si tiene más de 3 carácters, lo muestra vacío
 
             if (strlen($_POST['name']) < 3) {
                 echo '<input type="text" name="name" id="name" value="' . $_POST['name'] . '"/>';

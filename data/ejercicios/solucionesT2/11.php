@@ -48,7 +48,7 @@
 
         if (isset($_POST['send']) && !empty($_POST['send'])) {
 
-            // Echo de los parámatros del formulario si tienen contenido o "-" si están vacíos
+            // Echo de los parámatros recibidos del formulario por POST si tienen contenido o "-" si están vacíos
 
             echo "Titulo: " . (!empty($_POST['title']) ? $_POST['title'] : "-") . "<br>";
             echo "Autor: " . (!empty($_POST['author']) ? $_POST['author'] : "-") . "<br>";

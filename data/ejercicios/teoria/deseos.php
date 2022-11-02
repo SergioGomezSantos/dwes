@@ -123,10 +123,7 @@ if (!is_array($_SESSION['items'])) {
             echo "Error al interactuar con el archivo";
         }
 
-        foreach ($_SESSION['items'] as $item) {
-
-            fwrite($fp, $item . PHP_EOL);
-        }
+        fwrite($fp, json_encode($_SESSION['items'], JSON_FORCE_OBJECT));
 
         fclose($fp);
         $_SESSION['items'] = array();
@@ -136,13 +133,13 @@ if (!is_array($_SESSION['items'])) {
 
     function read()
     {
+        $items_json = file_get_contents('deseos.txt');
+        $items = json_decode($items_json, true);
 
-        $fp = fopen('deseos.txt', "r");
         echo "Items guardados: " . "<br>";
 
-        while (!feof($fp)) {
-            $line = fgets($fp);
-            echo $line . "<br>";
+        foreach ($items as $item) {
+            echo $item . "<br>";
         }
     }
 

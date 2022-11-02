@@ -24,8 +24,10 @@ session_start();
             // Si tiene más de 3 carácters, lo muestra vacío
 
             if (strlen($_POST['name']) < 3) {
+                
                 echo '<input type="text" name="name" id="name" value="' . $_POST['name'] . '"/>';
             } else {
+
                 echo '<input type="text" name="name" id="name"/>';
             }
             

@@ -45,10 +45,12 @@
 
         if (isset($_POST['send']) && !empty($_POST['send'])) {
 
-            // Si ninguno de los parámetros number1/number2/operator del formulario por POST esta vacío, entra en el bucle
-            // Si alguno está vacío, muestra un aviso en rojo
+            // Si ninguno de los parámetros number1/number2/operator del formulario por POST esta vacío y todos existen, entra en el bucle
+            // Si alguno está vacío o no existe, muestra un aviso en rojo
 
-            if (!empty($_POST['number1']) && !empty($_POST['number2']) && !empty($_POST['operator'])) {
+            if (isset($_POST['number1']) && !empty($_POST['number1']) 
+                && isset($_POST['number2']) && !empty($_POST['number2']) 
+                && isset($_POST['operator']) && !empty($_POST['operator'])) {
 
                 // Guardo los parámetros number1/number2/operator del formulario por POST y declaro la variable $result
                 

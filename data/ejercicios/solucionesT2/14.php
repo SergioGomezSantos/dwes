@@ -45,14 +45,20 @@
 
         if (isset($_POST['send']) && !empty($_POST['send'])) {
 
-            // Si alguno de los parámetros number1/number2/operator del formulario por POST está vacío
+            // Si ninguno de los parámetros number1/number2/operator del formulario por POST esta vacío, entra en el bucle
+            // Si alguno está vacío, muestra un aviso en rojo
 
             if (!empty($_POST['number1']) && !empty($_POST['number2']) && !empty($_POST['operator'])) {
 
+                // Guardo los parámetros number1/number2/operator del formulario por POST y declaro la variable $result
+                
                 $number1 = $_POST['number1'];
                 $number2 = $_POST['number2'];
                 $operator = $_POST['operator'];
                 $result;
+
+
+                // Switch al $operator para operar con los 2 números según el operador elegido
 
                 switch ($operator) {
 
@@ -75,8 +81,9 @@
                         break;
                 }
 
-                echo "<br><hr><br> Datos Recibidos.<br><br>";
+                echo "<br><hr><br>" . "Datos Recibidos.". "<br><br>";
                 echo $number1 . " " . $operator . " " . $number2 . " = " . $result;
+
             } else {
 
                 echo "<p style=color:red>Los campos de numeros son obligatorios</p>";

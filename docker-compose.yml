@@ -10,7 +10,6 @@ services:
       - ./data/ejercicios:/var/www/html
     environment:
       - VIRTUAL_HOST=ejercicios.local,www.ejercicios.local
-    restart: always
     networks:
       - frontend
       - backend

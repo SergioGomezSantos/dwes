@@ -13,6 +13,9 @@ session_start();
 <body>
 
     <div>
+
+        <!-- Creación de la lista con los enlaces a los colores -->
+
         <ul>
             <li><a href="21.php?method=cambio&color=orange">Naranja</a></li>
             <li><a href="21.php?method=cambio&color=red">Rojo</a></li>

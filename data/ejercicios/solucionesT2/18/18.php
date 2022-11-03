@@ -38,6 +38,11 @@ switch ($_GET['option']) {
         $app->reset();
         break;
 
+    case "close":
+
+        $app->close();
+        break;
+
     default:
 
         $app->login();

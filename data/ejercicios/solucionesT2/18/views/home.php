@@ -19,12 +19,12 @@ if (!isset($_COOKIE['userName'])) {
 
     <?php
 
-    // Incluyo la cabecera, donde está el nombre de la App y el Nav con los enlaces para cambiar ?option
+    // Include a la cabecera, donde está el nombre de la App y el Nav con los enlaces para cambiar ?option
     include('header.php');
 
     echo "<div>";
 
-    // Lanzo homeList()
+    // Lanzo homeList() para mostar los deseos
     $this->homeList();
 
     echo "</div>";

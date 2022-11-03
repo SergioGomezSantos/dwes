@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->removeWish(htmlspecialchars($_POST['removeWish']));
             header('Location: 18.php?option=menu');
             exit();
+
         } else {
 
             $error = "Falta el Deseo";
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Deseo a Borrar: </label>
             <select id="removeWish" name="removeWish">
                 <?php
+                // Lanzo deleteList() para que cree la lista desplegable de deseos
                 $this->deleteList();
                 ?>
             </select>

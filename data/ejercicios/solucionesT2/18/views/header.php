@@ -34,7 +34,7 @@
 
         <?php
 
-        // Si está la cookie, entra al bucle
+        // Si existe la cookie con userName, entra al bucle
 
         if (isset($_COOKIE['userName'])) {
 

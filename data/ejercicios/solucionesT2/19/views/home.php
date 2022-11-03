@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +5,9 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/app.css">
     <?php 
+
+        // Si existe la cookie con el color, sprintf con el contenido para cambiar el color del body
+
         if (isset($_COOKIE['color'])) {
             echo sprintf(
                 "<style>
@@ -16,6 +15,7 @@ session_start();
                 </style>"
             , $_COOKIE['color']);
         }
+
     ?>
 </head>
 
@@ -25,11 +25,13 @@ session_start();
 
     <div>
         <h1>
+            <!-- Echo para mostrar el $name de la App -->
             <?= $this->getName() ?>
         </h1>
 
         <?php 
-            $this->colors();
+            // Include para mostrar la lista en enlaces con los colores
+            include('colors.php');
         ?>
     </div>
 

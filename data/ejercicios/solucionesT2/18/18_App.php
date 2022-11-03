@@ -89,6 +89,7 @@ class App
             }
 
             fclose($fp);
+
         } else {
 
             echo "Error al leer el archivo";
@@ -170,11 +171,11 @@ class App
             }
 
 
-            // Quito del array de líneas la primera, que equivale a la constante DEFAULT_TEXT
             // Cierro el fichero
+            // Quito del array de líneas la primera, que equivale a la constante DEFAULT_TEXT
 
-            unset($list[0]);
             fclose($fp);
+            unset($list[0]);
 
 
             // Recorro el array $list y voy creando inputs con el texto del deseo sin "-" y value la posición del deseo dentro del array
@@ -280,6 +281,19 @@ class App
 
     }
 
+    // Funcion close()
+    // Se lanza desde 18.php
+
+    public function close()
+    {
+        // Borra la cookie y redirect a 18.php para que lance login()
+
+        setcookie('userName', '', time() - 60);
+        unset($_COOKIE['userName']);
+        header('Location: 18.php');
+        exit();
+    }
+
     /**
      * Getter para $name
      * Get the value of name
@@ -300,7 +314,7 @@ class App
         return $this;
     }
 
-        /**
+    /**
      * Getter para $options
      * Get the value of options
      */

@@ -2,6 +2,8 @@
 
 session_start();
 
+// Si no tiene la sesión con userName, redirige para ir al login
+
 if (!isset($_SESSION['userName'])) {
     header('Location: 20.php');
 }
@@ -18,10 +20,16 @@ if (!isset($_SESSION['userName'])) {
 <body>
 
     <?php
-    include ('header.php');
+    
+    // Include a la cabecera, donde está el nombre de la App y el Nav con los enlaces para cambiar ?option
+
+    include('header.php');
 
     echo "<div>";
+
+    // Lanzo homeList() para mostrar los deseos
     $this->homeList();
+
     echo "</div>";
     
     ?>

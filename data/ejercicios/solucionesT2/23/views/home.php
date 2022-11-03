@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +8,18 @@
 <body>
 
     <?php
-    include ('header.php');
+
+    // Include a la cabecera, donde está el nombre de la App y el Nav con los enlaces para cambiar ?option
+
+    include('header.php');
 
     echo "<div>";
+
+    // Lanzo homeList() para mostrar los deseos
     $this->homeList();
+
     echo "</div>";
-    
+
     ?>
 
 </body>

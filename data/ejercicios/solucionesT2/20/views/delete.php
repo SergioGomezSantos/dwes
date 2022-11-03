@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($_POST['removeWish']) && !empty($_POST['removeWish'])) {
 
-            $this->removeWish($_POST['removeWish']);
+            $this->removeWish(htmlspecialchars($_POST['removeWish']));
             header('Location: 20.php?option=menu');
             exit();
 

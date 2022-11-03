@@ -12,6 +12,7 @@
   <header>
 
     <h1>
+      <!-- Echo para mostar el $name de la App -->
       <?= $this->getName(); ?>
     </h1>
 
@@ -21,6 +22,9 @@
       <ul>
 
         <?php
+
+        // Compruebo si el parámetro option del GET es distinto a cada valor del array opciones de la App para mostrar el texto como texto plano o como enlace
+        // Los enlaces redirigen a la misma página pero con ?option=X
 
         if (isset($_GET['option'])) {
           echo '<li><a href="23.php">Lista</a></li>';

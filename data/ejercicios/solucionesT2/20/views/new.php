@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($_POST['newWish']) && !empty($_POST['newWish'])) {
 
-            $this->addWish($_POST['newWish']);
+            $this->addWish(htmlspecialchars($_POST['newWish']));
             header('Location: 20.php?option=menu');
             exit();
 

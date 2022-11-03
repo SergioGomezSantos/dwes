@@ -36,7 +36,6 @@ services:
       - db
     environment:
       - VIRTUAL_HOST=mvc.local,www.mvc.local
-    restart: always
     networks:
       - frontend
       - backend      
